@@ -3,12 +3,15 @@
 hour=0
 while [ $hour -le 12 ]
 do
-echo "Hour: $hour"
-minute=1
-while [ $minute -le 59 ]
-do 
-echo "$minute"
-((minute++))
-done
-((hour++))
+  echo "Hour: $hour"
+  minute=1
+  while [ $minute -le 59 ]
+  do
+    echo "$minute"
+    ((minute++))
+  done
+  ((hour++))
+  if [ $hour -gt 12 ]; then
+    break
+  fi
 done | head -n 70
